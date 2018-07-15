@@ -2,16 +2,22 @@ function Calculator() {
   this.currentVal = 0;
 }
 
-Calculator.prototype.add = function(num) {
-  this.currentVal = this.currentVal + num;
+Calculator.prototype.add = function() {
+  this.currentVal = [...arguments].reduce(function(total, currentArg) {
+    return total + currentArg;
+  }, this.currentVal);
 };
 
-Calculator.prototype.subtract = function(num) {
-  this.currentVal = this.currentVal - num;
+Calculator.prototype.subtract = function() {
+  this.currentVal = [...arguments].reduce(function(total, currentArg) {
+    return total - currentArg;
+  }, this.currentVal);
 };
 
-Calculator.prototype.multiply = function(num) {
-  this.currentVal = this.currentVal * num;
+Calculator.prototype.multiply = function() {
+  this.currentVal = [...arguments].reduce(function(total, currentArg) {
+    return total * currentArg;
+  }, this.currentVal);
 };
 
 Calculator.prototype.returnVal = function() {
