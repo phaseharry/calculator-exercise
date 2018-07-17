@@ -24,4 +24,7 @@ Calculator.prototype.returnVal = function() {
   return this.currentVal;
 };
 
+Calculator.prototype.clear = function() {
+  this.currentVal = 0;
+};
 module.exports = Calculator;
